@@ -2,10 +2,11 @@ import makeBracket from './makeBracket';
 import doTournament from './doTournament';
 
 export default function simulator(N=100) {
+    const teamBracketObj = makeBracket();
     const winnerObj={};
     for (let i=0;i<N;i++) {
-        const teams=JSON.parse(JSON.stringify(teamsOriginal));
-        const bracket = makeBracket();
+        const teams=JSON.parse(JSON.stringify(teamBracketObj.teams));
+        const bracket = teamBracketObj.bracket;
         const winner=doTournament(bracket);
         winnerObj[winner.name]=(winnerObj[winner.name] || 0)+1
     }

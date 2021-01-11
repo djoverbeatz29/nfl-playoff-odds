@@ -97,7 +97,7 @@ export default function makeBracket() {
         }
     };
 
-    return bracket;
+    return {teams, bracket};
 }
 
 export default makeBracket;
